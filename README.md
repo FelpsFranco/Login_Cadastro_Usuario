@@ -5,7 +5,7 @@
 # A parte gráfica foi criada de forma manual sem auxílio de outros programas Grpaficos.
 # Icons retirados do site https://www.flaticon.com/br/buscar?word=senha&order_by=4&type=icon
 
-#Para executar o arquivo, verificar a disposição das imagens para evitar erros de compilado.
+# Para executar o arquivo, verificar a disposição das imagens para evitar erros de compilado.
 
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
