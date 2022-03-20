@@ -45,15 +45,6 @@ class Login:
 
         self.root.mainloop()
 
-    def verifica_login(self):
-        usuario_correto = 'admin'
-        senha_correta = '1234'
-        if self.usuario.get() == 'admin' and self.senha.get() == '1234':
-            print('logado')
-            self.root.destroy()
-        else:
-            print('Dados Incorretos!!')
-
     def solicita_cadastro(self):
         print('Iniciando Cadastro')
         self.root.destroy()
