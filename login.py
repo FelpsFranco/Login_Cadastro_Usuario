@@ -98,26 +98,44 @@ class Login:
 
         self.janela_inicial.mainloop()
 
-
-
     def volta_login(self):
         self.janela.destroy()
         self.__init__()
 
+    def menssagem_erro(self):
+        self.mensagem = Tk()
+        self.mensagem.geometry('300x100+50+250')
+        self.mensagem.resizable(width=False, height=False)
+        self.mensagem.configure(bg='black')
+        self.mensagem.title('Erro')
+
+        label_erro = Label(self.mensagem, image="::tk::icons::question", bg='black')
+        label_erro.grid(row=0, column=0, pady=(7, 0), padx=(10, 30), sticky="e")
+        label_mensagem = Label(self.mensagem, text="Verifique os Campos Vazios", bg='black', fg='white')
+        label_mensagem.grid(row=0, column=1, columnspan=3, pady=(7, 10), sticky="w")
+
+        b1 = Button(self.mensagem, text="OK", command=self.mensagem.destroy, width=4, bg='white', borderwidth=0)
+        b1.grid(row=1, column=1, padx=(35, 35), sticky="e")
+
     def cadastrarBackEnd(self):
-        try:
-            with open('usuarios.txt', 'a') as arquivoUsuario:
-                arquivoUsuario.write(self.usuario.get() + '\n')
+        if self.usuario.get() == '' or self.senha.get() == '' or self.email.get() == '':
+            self.menssagem_erro()
 
-            with open('senhas.txt', 'a') as arquivoUsuario:
-                arquivoUsuario.write(self.senha.get() + '\n')
+        else:
+            try:
+                with open('usuarios.txt', 'a') as arquivoUsuario:
+                    arquivoUsuario.write(self.usuario.get() + '\n')
 
-            with open('Email.txt', 'a') as arquivoUsuario:
-                arquivoUsuario.write(self.email.get() + '\n')
-                self.janela.destroy()
-                self.__init__()
-        except:
-            print('ERRO 404')
+                with open('senhas.txt', 'a') as arquivoUsuario:
+                    arquivoUsuario.write(self.senha.get() + '\n')
+
+                with open('Email.txt', 'a') as arquivoUsuario:
+                    arquivoUsuario.write(self.email.get() + '\n')
+                    self.janela.destroy()
+                    self.__init__()
+            except:
+                print('ERRO 404')
+
 
     def loginBackEnd(self):
         with open('usuarios.txt', 'r') as arquivoUsuario:
