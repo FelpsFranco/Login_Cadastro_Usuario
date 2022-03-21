@@ -1,4 +1,5 @@
 from tkinter import *
+from MusicPlayer import Music
 
 class Login:
     def __init__(self):
@@ -85,19 +86,6 @@ class Login:
 
         self.root.mainloop()
 
-
-
-    def logado(self):
-        self.janela_inicial = Tk()
-        self.janela_inicial.geometry('863x860+0+0')
-        self.janela_inicial.resizable(width=False, height=False)
-        self.janela_inicial.title('Bem Vindo')
-        imagem = PhotoImage(file='bemvindo.png')
-        label0 = Label(self.janela_inicial, image=imagem)
-        label0.place(x=0, y=0)
-
-        self.janela_inicial.mainloop()
-
     def volta_login(self):
         self.janela.destroy()
         self.__init__()
@@ -157,7 +145,9 @@ class Login:
                 print('Usuário Logado')
                 logado = True
                 self.root.destroy()
-                self.logado()
+                music = Music('')
+                music.incia()
+
 
         if not logado:
             print('Usuário ou Senha Incorreto!!')
