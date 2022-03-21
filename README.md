@@ -1,5 +1,5 @@
-# Login_Cadastro_Usuario
-# Cadastro de Usuários e Login funcional.
+# Player_Music_And_Login
+# Player de Música e Login/Cadastro de usuário
 
 # Insira o endereço das imagens ou coloque dentro da pasta principal do projeto antes da excução
 # Enter the image address or place it inside the main project folder before execution
