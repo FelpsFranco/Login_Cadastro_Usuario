@@ -9,10 +9,10 @@ class Login:
         self.root.title('TELA LOGIN')
         self.root.config(cursor='hand1')
         self.root.configure(bg='gray15')
-        login_user = PhotoImage(file='User.png')
-        usuario_image = PhotoImage(file='Usuario.png')
-        senha_image = PhotoImage(file='senha.png')
-        linha = PhotoImage(file='Linha.png')
+        login_user = PhotoImage(file='C:/Users/felip/OneDrive/Área de Trabalho/pythonProject/TelaLogin/Imagens/User.png')
+        usuario_image = PhotoImage(file='C:/Users/felip/OneDrive/Área de Trabalho/pythonProject/TelaLogin/Imagens/Usuario.png')
+        senha_image = PhotoImage(file='C:/Users/felip/OneDrive/Área de Trabalho/pythonProject/TelaLogin/Imagens/senha.png')
+        linha = PhotoImage(file='C:/Users/felip/OneDrive/Área de Trabalho/pythonProject/TelaLogin/Imagens/Linha.png')
 
 
         self.label0 = Label(self.root, image=login_user, bg='gray15')
