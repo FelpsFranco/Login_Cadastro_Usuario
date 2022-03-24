@@ -9,40 +9,37 @@ class Login:
         self.root.title('TELA LOGIN')
         self.root.config(cursor='hand1')
         self.root.configure(bg='gray15')
-        login_user = PhotoImage(file='C:/Users/felip/OneDrive/Área de Trabalho/pythonProject/TelaLogin/Imagens/User.png')
+        login_user = PhotoImage(file='C:/Users/felip/OneDrive/Área de Trabalho/pythonProject/TelaLogin/Imagens/logo.png')
         usuario_image = PhotoImage(file='C:/Users/felip/OneDrive/Área de Trabalho/pythonProject/TelaLogin/Imagens/Usuario.png')
         senha_image = PhotoImage(file='C:/Users/felip/OneDrive/Área de Trabalho/pythonProject/TelaLogin/Imagens/senha.png')
-        linha = PhotoImage(file='C:/Users/felip/OneDrive/Área de Trabalho/pythonProject/TelaLogin/Imagens/Linha.png')
 
 
         self.label0 = Label(self.root, image=login_user, bg='gray15')
-        self.label0.place(x=140, y=40)
+        self.label0.place(x=135, y=25)
 
         self.label_usuario = Label(self.root, image=usuario_image, borderwidth=0, bg='gray15')
-        self.label_usuario.place(x=70, y=190)
+        self.label_usuario.place(x=40, y=250)
         self.login_usuario = Entry(self.root, fg='black', bg='gray35', borderwidth=1, font=('italic', 12))
-        self.login_usuario.place(x=110, y=192, width=205, height=28)
+        self.login_usuario.place(x=80, y=252, width=245, height=28)
 
         self.label_senha = Label(self.root, image=senha_image, bg='gray15', borderwidth=0)
-        self.label_senha.place(x=70, y=242)
+        self.label_senha.place(x=40, y=302)
         self.login_senha = Entry(self.root, fg='white', bg='gray35', borderwidth=1, show='*',  font=('italic', 12))
-        self.login_senha.place(x=110, y=245, width=205, height=28)
+        self.login_senha.place(x=80, y=305, width=245, height=28)
 
-        self.op2 = Button(self.root, text='ENTRAR',command=self.loginBackEnd, relief='solid', borderwidth=0, activebackground='purple4', fg='black', bg='purple4')
-        self.op2.place(x=85, y=310, width=230, height=25)
+        self.op2 = Button(self.root, text='Sign In',command=self.loginBackEnd, relief='solid', borderwidth=0, activebackground='purple4', fg='black', bg='purple4')
+        self.op2.place(x=80, y=370, width=245, height=28)
 
-        self.label3 = Label(self.root, text='Ou', width=9, height=1, fg='white', bg='gray15')
-        self.label3.place(x=165, y=400)
+        self.op2 = Button(self.root, text='Forgot Password', relief='solid', borderwidth=0,activebackground='gray15', fg='white', bg='gray15')
+        self.op2.place(x=95, y=405, width=110, height=15)
 
-        self.label4 = Label(self.root, image=linha, width=110, height=1)
-        self.label4.place(x=70, y=409)
-        self.label4 = Label(self.root, image=linha, width=115, height=1)
-        self.label4.place(x=213, y=409)
+        self.label_separa = Label(self.root, text='|', width=1, height=1, fg='white', bg='gray15')
+        self.label_separa.place(x=205, y=400)
 
         # ---------------------------------------------------------------------------------------------------------------------------#
 
-        self.op1 = Button(self.root, text='CADASTRAR', command=self.solicita_cadastro, borderwidth=0, activebackground='purple4', relief='solid', fg='black', bg='purple4')
-        self.op1.place(x=85, y=500, width=230, height=25)
+        self.op1 = Button(self.root, text='Register', command=self.solicita_cadastro, borderwidth=0, activebackground='gray15', relief='solid', fg='white', bg='gray15')
+        self.op1.place(x=220, y=405, width=60, height=15)
 
         self.root.mainloop()
 
@@ -58,7 +55,7 @@ class Login:
         self.janela.title('Cadastro de Usuário')
         self.janela.config(cursor='hand1')
         self.janela.configure(bg='gray15')
-        new_user = PhotoImage(file='new_user.png')
+        new_user = PhotoImage(file='C:/Users/felip/OneDrive/Área de Trabalho/pythonProject/TelaLogin/Imagens/new_user.png')
 
         self.label0 = Label(self.janela, image=new_user,  borderwidth=0, bg='gray15')
         self.label0.place(x=140, y=40)
@@ -99,7 +96,7 @@ class Login:
 
         label_erro = Label(self.mensagem, image="::tk::icons::question", bg='black')
         label_erro.grid(row=0, column=0, pady=(7, 0), padx=(10, 30), sticky="e")
-        label_mensagem = Label(self.mensagem, text="Verifique os Campos Vazios", bg='black', fg='white')
+        label_mensagem = Label(self.mensagem, text="Verifique os Campos", bg='black', fg='white')
         label_mensagem.grid(row=0, column=1, columnspan=3, pady=(7, 10), sticky="w")
 
         b1 = Button(self.mensagem, text="OK", command=self.mensagem.destroy, width=4, bg='white', borderwidth=0)
@@ -150,6 +147,6 @@ class Login:
 
 
         if not logado:
-            print('Usuário ou Senha Incorreto!!')
+            self.menssagem_erro()
 
 Login()
